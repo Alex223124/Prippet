@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prippet</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <div class="wrapper">
+    <img src="/gfx/logo.png"/>
+    <span>Twitter Clone</span>
+  </div>
+  
+</header>
+<div id="content">
+  <div class="wrapper">
+    <% flash each do |name, msg| %>
+      <%= content_tag :div, msg, class: "flash #{name}" %>
+  <% end %>
+  <%= yield %>
+  </div>
+</div>
+
+<footer>
+    <div class= "wrapper">
+      Prippet - Another Ugly Twitter Clone<img scr="/gfx/logo-nettus.png">
+    </div>
+</footer>
+
+</body>
+</html>
